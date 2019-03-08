@@ -1,13 +1,13 @@
-let posts = require('../../data/message/posts.json')
-const filename = './data/message/posts.json'
-const helper = require('../../helpers/message/helper.js')
+let posts = require('../../data/group/posts.json')
+const filename = './data/group/posts.json'
+const helper = require('../../helpers/group/helper.js')
 
 function getPosts() {
     return new Promise((resolve, reject) => {
         if (posts.length === 0) {
             reject({
                 status: 202,
-                message: ' 202: There is no message'
+                message: ' 202: There is no group'
             })
         }
 
