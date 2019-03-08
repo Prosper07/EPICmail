@@ -9,13 +9,13 @@ function mustBeInteger(req, res, next) {
 }
 
 function checkFieldsPost(req, res, next) {
-    const { subject, message, parentMessageId, status } = req.body
+    const { general, confidential } = req.body
 
-    if (subject && message && parentMessageId && status) {
+    if (general && confidential ) {
         next()
     } else {
         res.status(400).json({ message: 'Error 400: The fields you provided are not good,
-            there are mendatory fields(keys) like "subject", "message","parentMessageId" and "status" 
+            there are mendatory fields(keys) like "general" and "confidential" 
             -->Reffer to the documentation(README.md file) to see how to write them!' })
     }
 }
