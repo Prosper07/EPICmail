@@ -15,7 +15,7 @@ function mustBeInArray(array, id) {
         const row = array.find(r => r.id == id)
         if (!row) {
             reject({
-                message: 'Error 404: You should provide a good ID is not good please',
+                message: 'Error 404: You should provide a good ID please',
                 status: 404
             })
         }
