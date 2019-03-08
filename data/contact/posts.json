@@ -1,26 +1,10 @@
 [
   {
-    "id": 1,
-    "createdOn": "Fri Mar 08 2019 15:17:39 GMT+0200 (Israel Standard Time)",
-    "updatedOn": "Fri Mar 08 2019 15:17:39 GMT+0200 (Israel Standard Time)",
-    "general": {
-      "email": "prosperkilolo@gmail.com",
-      "firstName": "Prosper",
-      "lastName": "KILOLO"
-    },
-    "confidential": {
-      "password": "88778888",
-      "groupCreatorId": 3,
-      "groupParticipantId": [
-        1,
-        2,
-        3
-      ],
-      "contactListId": [
-        1,
-        2,
-        3
-      ]
-    }
+    "id": 2,
+    "createdOn": "Fri Mar 08 2019 21:32:29 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Fri Mar 08 2019 21:32:29 GMT+0200 (Israel Standard Time)",
+    "email": "prosperkilolo@gmail.com",
+    "firstName": "Prosper",
+    "lastName": "KILOLO"
   }
 ]

@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const post = require('../../models/user/post.model')
-const m = require('../../helpers/user/middlewares')
+const post = require('../../models/contact/post.model')
+const m = require('../../helpers/contact/middlewares')
 
 /* All messages.. */
 router.get('/', async (req, res) => {

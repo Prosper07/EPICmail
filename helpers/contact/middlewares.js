@@ -9,12 +9,12 @@ function mustBeInteger(req, res, next) {
 }
 
 function checkFieldsPost(req, res, next) {
-    const { general, confidential } = req.body
+    const { email, firstName } = req.body
 
-    if (general && confidential ) {
+    if ( email && firstName ) {
         next()
     } else {
-        res.status(400).json({ message: '400: There are mendatory fields(keys) like "general" and "confidential". Reffere to the documentation(README.md file) to see how to write them!' })
+        res.status(400).json({ message: '400: There are mendatory fields(keys) like "eamil" and "firstName". Reffere to the documentation(README.md file) to see how to write them!' })
     }
 }
 
