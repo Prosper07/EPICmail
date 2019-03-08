@@ -1,16 +1,16 @@
 // Import packages
 const express = require('express')
 const morgan = require('morgan')
-// App
+// EPICmail app
 const app = express()
 // Morgan
 app.use(morgan('tiny'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-app.use(require('./routes/index.routes'))
-// First route
+app.use(require('./routes/message/index.routes'))
+// First route (root directory)
 app.get('/', (req, res) => {
-    res.json({ message: 'Hello world' })
+    res.json({ message: 'Welcome to EPICmail' })
 })
 
 // Starting server
