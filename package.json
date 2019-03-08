@@ -1,32 +1,29 @@
 {
-  "name": "epicmail",
+  "name": "EPICmail",
   "version": "1.0.0",
-  "description": "web app that helps people exchange messages/information",
+  "description": "",
   "main": "server.js",
   "scripts": {
+    "dev": "node_modules/.bin/nodemon -e js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel server.js --out-dir build",
-    "dev-start": "babel-watch server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Prosper07/EPICmail.git"
   },
-  "author": "Prosper KILOLO",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Prosper07/EPICmail/issues"
   },
   "homepage": "https://github.com/Prosper07/EPICmail#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "moment": "^2.24.0",
-    "uuid": "^3.3.2"
+    "express": "^4.16.4"
   },
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
-    "babel-watch": "^7.0.0"
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10"
   }
 }
