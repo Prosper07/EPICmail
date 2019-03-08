@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const post = require('../../models/message/post.model')
-const m = require('../../helpers/message/middlewares')
+const post = require('../../models/inbox/post.model')
+const m = require('../../helpers/inbox/middlewares')
 
 /* Get all messages.. */
 router.get('/', async (req, res) => {
