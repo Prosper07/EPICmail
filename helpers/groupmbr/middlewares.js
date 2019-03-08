@@ -9,12 +9,12 @@ function mustBeInteger(req, res, next) {
 }
 
 function checkFieldsPost(req, res, next) {
-    const { subject, message, parentMessageId, status } = req.body
+    const { name } = req.body
 
-    if (subject && message && parentMessageId && status) {
+    if (name) {
         next()
     } else {
-        res.status(400).json({ message: 'Err 400: There are mendatory fields(keys).Reffere to the documentation(README.md file) to see how to write them!' })
+        res.status(400).json({ message: 'Err 400: The name is mendatory.Reffere to the documentation(README.md file) to see how to write them!' })
     }
 }
 
