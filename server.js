@@ -1,12 +1,17 @@
-import express from 'express';
-
+// Import packages
+const express = require('express')
+const morgan = require('morgan')
+// App
 const app = express()
-
+// Morgan
+app.use(morgan('tiny'))
 app.use(express.json())
-
+app.use(express.urlencoded({ extended: true }))
+app.use(require('./routes/index.routes'))
+// First route
 app.get('/', (req, res) => {
-  return res.status(200).send({'message': 'YAY! Congratulations! Your first endpoint is working'});
+    res.json({ message: 'Hello world' })
 })
 
-app.listen(3000)
-console.log('app running on port ', 3000);
+// Starting server
+app.listen('1337')
