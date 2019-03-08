@@ -3,7 +3,7 @@ const router = express.Router()
 const post = require('../../models/message/post.model')
 const m = require('../../helpers/message/middlewares')
 
-/* All messages.. */
+/* Get all messages.. */
 router.get('/', async (req, res) => {
     await post.getPosts()
     .then(posts => res.json(posts))
@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
     })
 })
 
-/* A message by id */
+/* Get a message by id */
 router.get('/:id', m.mustBeInteger, async (req, res) => {
     const id = req.params.id
 
@@ -30,6 +30,21 @@ router.get('/:id', m.mustBeInteger, async (req, res) => {
         }
     })
 })
+
+/* Get a message by receiver's id 
+router.get('/0/:receiverIndivId', m.mustBeInteger, async (req, res) => {
+    const receiverIndivId = req.params.receiverIndivId
+
+    await post.getPostI(receiverIndivId)
+    .then(post => res.json(post))
+    .catch(err => {
+        if (err.status) {
+            res.status(err.status).json({ message: err.message })
+        } else {
+            res.status(500).json({ message: err.message })
+        }
+    })
+})*/
 
 /* Send a message to a user according to their id */
 router.post('/', m.checkFieldsPost, async (req, res) => {

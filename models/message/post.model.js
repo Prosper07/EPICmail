@@ -6,8 +6,8 @@ function getPosts() {
     return new Promise((resolve, reject) => {
         if (posts.length === 0) {
             reject({
-                message: ' 202: There is no available message for this ID',
-                status: 202
+                status: 202,
+                message: ' 202: There is no message'
             })
         }
 
@@ -22,6 +22,14 @@ function getPost(id) {
         .catch(err => reject(err))
     })
 }
+/* read a message from a user according to their id  
+function getPostI(receiverIndivId) {
+    return new Promise((resolve, reject) => {
+        helper.mustBeInArray(posts, receiverIndivId)
+        .then(post => resolve(post))
+        .catch(err => reject(err))
+    })
+}*/
 
 function insertPost(newPost) {
     return new Promise((resolve, reject) => {

@@ -11,11 +11,7 @@ Exemple:
 	"parentMessageId": 3,
 	"status":"read",
 	"senderId": 3,
-	"receiverIndivId": [
-		3,
-		2,
-		4
-		],
+	"receiverIndivId": 3,
 	"receiverGroupId": [
 		3,
 		2
@@ -34,10 +30,7 @@ Exemple:
                },
    "confidential":{
    				"password":"88778888",
-   				"groupCreatorId":[
-   					1,
-   					2
-   					],
+   				"groupCreatorId":3,
    				"groupParticipantId":[
    					1,
    					2,
