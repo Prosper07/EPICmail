@@ -1,12 +1,12 @@
-let posts = require('../data/message/posts.json')
+let posts = require('../../data/message/posts.json')
 const filename = './data/message/posts.json'
-const helper = require('../helpers/message/helper.js')
+const helper = require('../../helpers/message/helper.js')
 
 function getPosts() {
     return new Promise((resolve, reject) => {
         if (posts.length === 0) {
             reject({
-                message: 'no posts available',
+                message: ' 202: There is no available message for this ID',
                 status: 202
             })
         }
@@ -27,8 +27,8 @@ function insertPost(newPost) {
     return new Promise((resolve, reject) => {
         const id = { id: helper.getNewId(posts) }
         const date = { 
-            createdAt: helper.newDate(),
-            updatedAt: helper.newDate()
+            createdOn: helper.newDate(),
+            updatedOn: helper.newDate()
         } 
         newPost = { ...id, ...date, ...newPost }
         posts.push(newPost)
@@ -44,8 +44,8 @@ function updatePost(id, newPost) {
             const index = posts.findIndex(p => p.id == post.id)
             id = { id: post.id }
             const date = {
-                createdAt: post.createdAt,
-                updatedAt: helper.newDate()
+                createdOn: post.createdAt,
+                updatedOn: helper.newDate()
             } 
             posts[index] = { ...id, ...date, ...newPost }
             helper.writeJSONFile(filename, posts)

@@ -2,19 +2,19 @@ function mustBeInteger(req, res, next) {
     const id = req.params.id
 
     if (!Number.isInteger(parseInt(id))) {
-        res.status(400).json({ message: 'ID must be an integer' })
+        res.status(400).json({ message: 'Error 400: You should provide a good ID please(it must be an integer)' })
     } else {
         next()
     }
 }
 
 function checkFieldsPost(req, res, next) {
-    const { title, content, tags } = req.body
+    const { subject, message, parentMessageId, status } = req.body
 
-    if (title && content && tags) {
+    if (subject && message && parentMessageId && status) {
         next()
     } else {
-        res.status(400).json({ message: 'fields are not good' })
+        res.status(400).json({ message: 'Error 400: The fields you provides are not good (Reffer to the docimentation please)!' })
     }
 }
 

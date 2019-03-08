@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
-const post = require('../models/message/post.model')
-const m = require('../helpers/message/middlewares')
+const post = require('../../models/message/post.model')
+const m = require('../../helpers/message/middlewares')
 
 /* All messages.. */
 router.get('/', async (req, res) => {
@@ -35,7 +35,7 @@ router.get('/:id', m.mustBeInteger, async (req, res) => {
 router.post('/', m.checkFieldsPost, async (req, res) => {
     await post.insertPost(req.body)
     .then(post => res.status(201).json({
-        message: `The post #${post.id} has been created`,
+        message: `201: The message number ${post.id} has been created`,
         content: post
     }))
     .catch(err => res.status(500).json({ message: err.message }))
@@ -47,7 +47,7 @@ router.put('/:id', m.mustBeInteger, m.checkFieldsPost, async (req, res) => {
 
     await post.updatePost(id, req.body)
     .then(post => res.json({
-        message: `The post #${id} has been updated`,
+        message: `201 : The message number ${id} has been updated`,
         content: post
     }))
     .catch(err => {
@@ -64,7 +64,7 @@ router.delete('/:id', m.mustBeInteger, async (req, res) => {
 
     await post.deletePost(id)
     .then(post => res.json({
-        message: `The post #${id} has been deleted`
+        message: `200 : The message number ${id} has been deleted`
     }))
     .catch(err => {
         if (err.status) {
