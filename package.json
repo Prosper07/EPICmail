@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "node_modules/.bin/nodemon -e js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha || true",
     "start": "node server.js"
   },
   "repository": {
@@ -13,16 +13,22 @@
     "url": "git+https://github.com/Prosper07/EPICmail.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Prosper KILOLO prosperkilolo@gmail.com",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Prosper07/EPICmail/issues"
   },
   "homepage": "https://github.com/Prosper07/EPICmail#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "should": "^13.2.3"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.0.2",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.10"
   }

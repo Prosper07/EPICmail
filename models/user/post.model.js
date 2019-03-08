@@ -6,8 +6,8 @@ function getPosts() {
     return new Promise((resolve, reject) => {
         if (posts.length === 0) {
             reject({
-                message: ' 202: There is no available user with this ID',
-                status: 202
+                status: 202,
+                message: ' 202: There is no user'
             })
         }
 
