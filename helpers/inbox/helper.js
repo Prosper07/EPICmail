@@ -10,12 +10,12 @@ const getNewId = (array) => {
 
 const newDate = () => new Date().toString()
 
-function mustBeInArray(array, id) {
+function mustBeInArray(array, id, pwd) {
     return new Promise((resolve, reject) => {
-        const row = array.find(r => r.id == id)
+        const row = array.find(r => r.receiverIndivId == id && r.confidential.messageCode == pwd)
         if (!row) {
             reject({
-                message: 'Error 404: You should provide a good ID is not good please',
+                message: 'Error 404: You should provide a good ID please',
                 status: 404
             })
         }
