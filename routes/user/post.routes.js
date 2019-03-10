@@ -16,11 +16,12 @@ router.get('/', async (req, res) => {
     })
 })
 
-/* A message by id */
-router.get('/:id', m.mustBeInteger, async (req, res) => {
+/* A user by id and password*/
+router.get('/:id/:pwd', m.mustBeInteger, async (req, res) => {
     const id = req.params.id
+    const pwd = req.params.pwd
 
-    await post.getPost(id)
+    await post.getPost(id, pwd)
     .then(post => res.json(post))
     .catch(err => {
         if (err.status) {
@@ -41,13 +42,14 @@ router.post('/', m.checkFieldsPost, async (req, res) => {
     .catch(err => res.status(500).json({ message: err.message }))
 })
 
-/* Correct the sent message */
-router.put('/:id', m.mustBeInteger, m.checkFieldsPost, async (req, res) => {
+/* update one's account profile information */
+router.put('/:id/:pwd', m.mustBeInteger, m.checkFieldsPost, async (req, res) => {
     const id = req.params.id
+    const pwd = req.params.pwd
 
-    await post.updatePost(id, req.body)
+    await post.updatePost(id, pwd, req.body)
     .then(post => res.json({
-        message: `201 : Information of user number ${id} has been updated`,
+        message: `201 : Profile information of user number ${id} has been updated successfully`,
         content: post
     }))
     .catch(err => {
@@ -58,13 +60,14 @@ router.put('/:id', m.mustBeInteger, m.checkFieldsPost, async (req, res) => {
     })
 })
 
-/* Delete a message */
-router.delete('/:id', m.mustBeInteger, async (req, res) => {
+/* Delete one's account */
+router.delete('/:id/:pwd', m.mustBeInteger, async (req, res) => {
     const id = req.params.id
+    const pwd = req.params.pwd
 
-    await post.deletePost(id)
+    await post.deletePost(id, pwd)
     .then(post => res.json({
-        message: `200 : User number ${id} has been deleted`
+        message: `200 : User with id ${id} has been deleted successfully`
     }))
     .catch(err => {
         if (err.status) {
