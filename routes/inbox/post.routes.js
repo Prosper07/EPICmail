@@ -3,7 +3,7 @@ const router = express.Router()
 const post = require('../../models/inbox/post.model')
 const m = require('../../helpers/inbox/middlewares')
 
-/* Get all messages.. */
+/* All messages.. */
 router.get('/', async (req, res) => {
     await post.getPosts()
     .then(posts => res.json(posts))
@@ -16,11 +16,12 @@ router.get('/', async (req, res) => {
     })
 })
 
-/* Get a message by id */
-router.get('/:id', m.mustBeInteger, async (req, res) => {
+/* A user by id and password*/
+router.get('/:id/:pwd', m.mustBeInteger, async (req, res) => {
     const id = req.params.id
+    const pwd = req.params.pwd
 
-    await post.getPost(id)
+    await post.getPost(id, pwd)
     .then(post => res.json(post))
     .catch(err => {
         if (err.status) {
@@ -30,39 +31,25 @@ router.get('/:id', m.mustBeInteger, async (req, res) => {
         }
     })
 })
-
-/* Get a message by receiver's id 
-router.get('/0/:receiverIndivId', m.mustBeInteger, async (req, res) => {
-    const receiverIndivId = req.params.receiverIndivId
-
-    await post.getPostI(receiverIndivId)
-    .then(post => res.json(post))
-    .catch(err => {
-        if (err.status) {
-            res.status(err.status).json({ message: err.message })
-        } else {
-            res.status(500).json({ message: err.message })
-        }
-    })
-})*/
 
 /* Send a message to a user according to their id */
 router.post('/', m.checkFieldsPost, async (req, res) => {
     await post.insertPost(req.body)
     .then(post => res.status(201).json({
-        message: `201: The message number ${post.id} has been created`,
+        message: `201: User number ${post.id} has been created`,
         content: post
     }))
     .catch(err => res.status(500).json({ message: err.message }))
 })
 
-/* Correct the sent message */
-router.put('/:id', m.mustBeInteger, m.checkFieldsPost, async (req, res) => {
+/* update one's account profile information */
+router.put('/:id/:pwd', m.mustBeInteger, m.checkFieldsPost, async (req, res) => {
     const id = req.params.id
+    const pwd = req.params.pwd
 
-    await post.updatePost(id, req.body)
+    await post.updatePost(id, pwd, req.body)
     .then(post => res.json({
-        message: `201 : The message number ${id} has been updated`,
+        message: `201 : Profile information of user number ${id} has been updated successfully`,
         content: post
     }))
     .catch(err => {
@@ -73,13 +60,14 @@ router.put('/:id', m.mustBeInteger, m.checkFieldsPost, async (req, res) => {
     })
 })
 
-/* Delete a message */
-router.delete('/:id', m.mustBeInteger, async (req, res) => {
+/* Delete one's account */
+router.delete('/:id/:pwd', m.mustBeInteger, async (req, res) => {
     const id = req.params.id
+    const pwd = req.params.pwd
 
-    await post.deletePost(id)
+    await post.deletePost(id, pwd)
     .then(post => res.json({
-        message: `200 : The message number ${id} has been deleted`
+        message: `200 : User with id ${id} has been deleted successfully`
     }))
     .catch(err => {
         if (err.status) {
