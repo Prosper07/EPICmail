@@ -3,7 +3,7 @@ const router = express.Router()
 const post = require('../../models/inbox/post.model')
 const m = require('../../helpers/inbox/middlewares')
 
-/* All messages.. */
+/* All messages.. 
 router.get('/', async (req, res) => {
     await post.getPosts()
     .then(posts => res.json(posts))
@@ -14,13 +14,13 @@ router.get('/', async (req, res) => {
             res.status(500).json({ message: err.message })
         }
     })
-})
+}) */
 
 /* A user by id and password*/
 router.get('/:id/:pwd', m.mustBeInteger, async (req, res) => {
     const id = req.params.id
     const pwd = req.params.pwd
-
+    
     await post.getPost(id, pwd)
     .then(post => res.json(post))
     .catch(err => {
@@ -31,6 +31,7 @@ router.get('/:id/:pwd', m.mustBeInteger, async (req, res) => {
         }
     })
 })
+
 
 /* Send a message to a user according to their id */
 router.post('/', m.checkFieldsPost, async (req, res) => {

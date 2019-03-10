@@ -15,7 +15,7 @@ function mustBeInArray(array, id, pwd) {
         const row = array.find(r => r.id == id && r.confidential.password == pwd)
         if (!row) {
             reject({
-                message: 'Error 404: You should provide a good ID please',
+                message: 'Error 404: You should provide a good ID and good code please',
                 status: 404
             })
         }

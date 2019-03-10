@@ -52,5 +52,23 @@
       3,
       2
     ]
+  },
+  {
+    "id": 4,
+    "createdOn": "Sun Mar 10 2019 21:58:26 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Sun Mar 10 2019 21:58:26 GMT+0200 (Israel Standard Time)",
+    "subject": "JC",
+    "message": "JC",
+    "parentMessageId": 3,
+    "status": "read",
+    "senderId": 3,
+    "receiverIndivId": 3,
+    "confidential": {
+      "messageCode": ""
+    },
+    "receiverGroupId": [
+      3,
+      2
+    ]
   }
 ]
