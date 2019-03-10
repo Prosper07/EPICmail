@@ -15,6 +15,7 @@ function getPosts() {
     })
 }
 
+//for (let i=posts.id; i<posts.length; i++)
 function getPost(id, pwd) {
     return new Promise((resolve, reject) => {
         helper.mustBeInArray(posts, id, pwd)
