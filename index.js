@@ -12,6 +12,5 @@ app.use(require('./routes/message/index.routes'))
 app.get('/', (req, res) => {
     res.json({ message: 'Welcome to EPICmail' })
 })
-
 // Starting server
-app.listen('1337')
+app.listen(process.env.PORT || 3000, () => console.log('All right'))
