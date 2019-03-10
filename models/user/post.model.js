@@ -15,9 +15,9 @@ function getPosts() {
     })
 }
 
-function getPost(id) {
+function getPost(id, pwd) {
     return new Promise((resolve, reject) => {
-        helper.mustBeInArray(posts, id)
+        helper.mustBeInArray(posts, id, pwd)
         .then(post => resolve(post))
         .catch(err => reject(err))
     })
@@ -37,9 +37,9 @@ function insertPost(newPost) {
     })
 }
 
-function updatePost(id, newPost) {
+function updatePost(id, pwd, newPost) {
     return new Promise((resolve, reject) => {
-        helper.mustBeInArray(posts, id)
+        helper.mustBeInArray(posts, id, pwd)
         .then(post => {
             const index = posts.findIndex(p => p.id == post.id)
             id = { id: post.id }
@@ -55,9 +55,9 @@ function updatePost(id, newPost) {
     })
 }
 
-function deletePost(id) {
+function deletePost(id, pwd) {
     return new Promise((resolve, reject) => {
-        helper.mustBeInArray(posts, id)
+        helper.mustBeInArray(posts, id, pwd)
         .then(() => {
             posts = posts.filter(p => p.id != id)
             helper.writeJSONFile(filename, posts)
