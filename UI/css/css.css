@@ -16,12 +16,6 @@ body{
 	  min-height: 500px;
 }
 
-.header {
-	text-align: center;
-	padding: 7px 7px 7px 7px ;
-	color: blue;
-	font-size: 35px;
-}
 
 .bg{
   background: linear-gradient(
@@ -30,11 +24,18 @@ body{
     ),no-repeat;
   text-align: center;
   color: #ffffff;
-  top: 80%;
+  top: 458px;
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
     box-sizing: border-box;
+}
+
+.header {
+	text-align: center;
+	padding: 7px 7px 7px 7px ;
+	color: blue;
+	font-size: 35px;
 }
 
 dialog{
