@@ -1,36 +1,35 @@
+/* body element (in general) display. This includes even the background in yellow behind the page */
 body{
 	font: 15px/1.5 Arial;
 	padding: 0;
     margin: 0;
-	background-color: #ffff80;
+	background-color: #ffff80; /* a yellow color */
 }
-
+/* a class for some elements of body, espacially about the page ( exluding the background)*/
 .bodyy {
-  box-shadow: 0 0 3px 3px rgba(0, 0, 255, 0.8 );
-  padding: 4px 4px 4px 4px ; 
+  box-shadow: 0 0 3px 3px rgba(0, 0, 255, 0.8 ); /* a blue color in 80% of opacity*/
+  padding: 4px 4px 4px 4px ; /* 4px of space in each side of the page (living the backcground behing) */
     margin: 21px 21px 21px 21px ; 
-  	text-align: center;
+  	text-align: center; /* centering all the texts in the class "bodyy" */
 }
-
+/* large class : assigning a minimum height to the body of the page. to avoid very small pages */
 .large{
 	  min-height: 500px;
 }
-
-
+/* this "bg" class and sub-classes related to it (bg h1, bg p) is mainly to manage the display and position of everything that is under the header element */
 .bg{
-  background: linear-gradient(
+  background: linear-gradient( /* gradient color from (brown color to yellow in 60% of opacity) */
       rgba(184, 108, 52, 0.60),
       rgba(255, 255, 128, 0.60)
     ),no-repeat;
   text-align: center;
-  color: #ffffff;
-  top: 458px;
+  color: #ffffff; /* white color */
+  top: 458px;  /* pushing element of "bg" class 458px under the top of the screen */
   left: 50%;
   position: absolute;
   transform: translate(-50%, -50%);
     box-sizing: border-box;
 }
-
 .bg h1{
   margin-top: 150px;
   padding: 0 100px 0 100px;
@@ -44,49 +43,37 @@ body{
   justify-content: center;
   font-family: 'montserrat';
 }
-
-.header {
-	text-align: center;
-	padding: 7px 7px 7px 7px ;
-	color: blue;
-	font-size: 35px;
-}
-
+/* ccharacteristics of pop-ups */
 dialog{
   min-height: 200px;
-  background: linear-gradient(
+  background: linear-gradient( /* gradient color from (brown color to yellow with 100% of opacity) */
       rgba(184, 108, 52, 1),
       rgba(255, 255, 128, 1)
     );
   text-align: center;
   color: #ffffff;
 }
-
+/* ccharacteristics of text area (for writing pages) */
 textarea{
   min-height: 200px;
   min-width:800px;
-  background: #ffff90;
+  background: #ffff90; /* light yellow color for text area */
   color: #0000ff;
 }
-
+/* ccharacteristics of tables (to display the content comming from the back-end_ such as listing comming messages, sent messages, etc...) */
 table{
   min-height: 100px;
   min-width:800px;
-  background: #ffffff;
+  background: #ffffff; /* white color for tables */
   color: #0000ff;
 }
-
-ul{
-  margin: 0;
-  padding: 0;
-}
+/*this element and all sub-element related to it (header a, header li, etc...) discribes how the head of the page will be displayed (including menu buttons) */
 header{
-  background: #00008f;
+  background: #00008f; /* a blue color for the header of the page*/
   color: #ffffff;
   padding-top: 30px;
   min-height: 70px;
   border-bottom: #d5c788 3px solid;
-
 }
 header a{
   color: #ffffff;
@@ -113,25 +100,26 @@ header button:hover{
   color: white;
   border:none;
 }
+/* a class concerning the content of the header too */
+.container{
+  width:100%;
+  margin: auto;
+  overflow: hidden;
+}
+/* discribes the way the footer of the page is displayed and all the disposition */
 footer{
   padding: 20px;
   margin-top: 0;
   color: #ffffff;
-  background-color: #00006f;
+  background-color: #00006f;  /* a blue color for the footer */
   text-align: center;
 }
-
+/* for buttons that are not in the header */
 #bt{
-    background-color: #35424a;
+    background-color: #35424a; /* grey color for buttons */
     color: white;
     font-family: 'montserrat';
     padding: 5px 8px 5px 8px;
     margin-bottom: 14px;
     border: 1px solid white;
-}
-
-.container{
-  width:100%;
-  margin: auto;
-  overflow: hidden;
 }
