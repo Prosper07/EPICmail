@@ -16,6 +16,8 @@ EPICmail | Sign-in
 </div>
 <nav>
 <ul>
+<!-- buttons in the header -->
+<!-- assigning an id to the "SIN-IN LIKE AN ADMIN" button in order to call a pop-up -->
 <li><button id="show21"> SIN-IN LIKE AN ADMIN </button></li>
 <li><a href="../index.html"><button> LOG-OUT </button></a></li>
     <li><a href="#"><button> PROFILE</button></a></li>
@@ -23,6 +25,7 @@ EPICmail | Sign-in
 </ul>
 </nav>
   </div>
+  <!-- assigning an id to the pop-up/dialog box in order to be called -->
   <dialog id="d21">
 <section >
 <form action="admin.html">
@@ -32,15 +35,20 @@ EPICmail | Sign-in
 <input type="password" placeholder="Paste the code here"></br></br>
 <input id="bt" type="submit" value=" SIGN-IN "></br>
 </form>
+<!-- assigning an id to the pop-up button in order to close it once called -->
 <button id="close21"> CANCEL </button> 
 </section> </dialog>
+<!-- a script to manage the pop-up/dialog box -->
  <script> 
+ <!-- selecting the id of the button that calls the pop-up -->
      var dialog21 = document.querySelector('#d21'); 
+ <!-- selecting the id of the pop-up's button and assigning to it an action to do when clicked (to show the pop-up) -->
   document.querySelector('#show21').onclick = function() { dialog21.show(); }; 
+  <!-- selecting the id of the "CANCEL" button in the pop-up and assigning to it an action to do when clicked (to close the pop-up) -->
  document.querySelector('#close21').onclick = function() { dialog21.close(); };
  </script>
- 
 </header>
+<!-- putting the text in the class "large" which is going to help maintain certain dimension for the text -->
 <div class="large">
 <section >
 <p>
