@@ -41,67 +41,22 @@ EPICmail | Sign-in
  </script>
  
 </header>
-<section  class="bg">
+<div class="large">
+<section >
 <p>
 <div></br>
 
 <a href="write.html"><button id="bt"> WRITE TEXT </button></a></br></br>
-<button class="received" id="bt"> <b> RECEIVED MESSAGES</b> </button>
-<dialog id="d2">
-<section  >
-<div>INBOX </br> CHECK AN EMAIL AND TAKE ACTION:</div>
-<p>
-<table></table>
-</p>
-<p><button > <b> READ </b> </button> <button > <b> REPLY </b> </button> <button > <b> DELETE </b> </button>
- </p>
-<button class="close2" id="bt"> CANCEL </button> 
-</section> 
-</dialog> 
-<script>
-   var dialog2 = document.querySelector('#d2'); 
-  document.querySelector('.received').onclick = function() { dialog2.show(); }; 
- document.querySelector('.close2').onclick = function() { dialog2.close(); };
- </script>
-<button class="sent" id="bt"> <b> SENT MESSAGES</b> </button></a>
-<dialog id="d1">
-<section >
-<div> OUTBOX </br> CHECK AN EMAIL AND TAKE ACTION:</div>
-<p>
-<table></table>
-</p>
-<p><button > <b> READ </b> </button> <button > <b> RETRACT </b> </button> <button > <b> DELETE </b> </button>
- </p>
-<button class="close1" id="bt"> CANCEL </button> 
-</section> 
-</dialog> 
-<script>
-   var dialog1 = document.querySelector('#d1'); 
-  document.querySelector('.sent').onclick = function() { dialog1.show(); }; 
- document.querySelector('.close1').onclick = function() { dialog1.close(); };
- </script>
-<button class="draft" id="bt"> <b> DRAFTS </b> </button></br></br>
-<dialog id="d3">
-<section >
-<div> DRAFT </br> CHECK AN EMAIL AND TAKE ACTION:</div>
-<p>
-<table></table>
-</p>
-<p><button > <b> EDIT </b> </button> <button > <b> SEND </b> </button> <button > <b> DELETE </b> </button>
- </p>
-<button class="close3" id="bt"> CANCEL </button> 
-</section> 
-</dialog> 
-<script>
-   var dialog3 = document.querySelector('#d3'); 
-  document.querySelector('.draft').onclick = function() { dialog3.show(); }; 
- document.querySelector('.close3').onclick = function() { dialog3.close(); };
- </script>
+<a href="received.html"><button class="received" id="bt"> <b> RECEIVED MESSAGES</b> </button></a>
+<a href="sent.html"><button class="sent" id="bt"> <b> SENT MESSAGES</b> </button></a>
+<a href="draft.html"><button class="draft" id="bt"> <b> DRAFTS </b> </button></a></br></br>
+
 </div>
 </p>
 </section>
 </center>
 </br></br></br></br>
+</div>
 </body>
 <footer> Copyright &copy 2019 </footer>
 </html>
