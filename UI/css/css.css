@@ -8,8 +8,12 @@ body{
 .bodyy {
   box-shadow: 0 0 3px 3px rgba(0, 0, 255, 0.8 );
   padding: 4px 4px 4px 4px ; 
-    margin: 21px 100px 100px 100px ; 
+    margin: 21px 21px 21px 21px ; 
   	text-align: center;
+}
+
+.large{
+	  min-height: 500px;
 }
 
 .header {
@@ -20,13 +24,17 @@ body{
 }
 
 .bg{
-  min-height: 500px;
   background: linear-gradient(
       rgba(184, 108, 52, 0.60),
       rgba(255, 255, 128, 0.60)
-    );
+    ),no-repeat;
   text-align: center;
   color: #ffffff;
+  top: 80%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+    box-sizing: border-box;
 }
 
 dialog{
@@ -49,7 +57,7 @@ textarea{
 table{
   min-height: 100px;
   min-width:800px;
-  background: #ffff90;
+  background: #ffffff;
   color: #0000ff;
 }
 
@@ -124,7 +132,7 @@ footer{
 }
 
 .container{
-  width:80%;
+  width:100%;
   margin: auto;
   overflow: hidden;
 }

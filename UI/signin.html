@@ -16,68 +16,29 @@ EPICmail | Sign-in
 </div>
 <nav>
 <ul>
-  <li><button id="show2"> RESET YOUR PASSWORD IF FORGOTTEN </button></li>
-  <li><button id="show"> SIGN-UP </button></li>
+  <li><a href="signup.html"><button > SIGN-UP </button></a></li>
   <li><a href="../index.html"><button> HOME </button></a></li>
 </ul>
 </nav>
   </div>
-  
-<dialog id="d1">
-<section  >
-<form action="account.html">
-<p> CREATE YOUR ACCOUNT HERE </p>
- <p><b> Put the username: </b>
-<input type="text" placeholder="Your username"></p>
- <p><b> Put your email adress here </br>(and wait for verification email): </b>
-<input type="email" placeholder="Your email adress"></p>
- <p><b>Create the password:</b></br>
-<input type="password" placeholder="Enter the password"></br>
-<input type="password" placeholder="Repeat the password"></br> </p>
-<input id="bt" type="submit" value=" REGISTER ">
-</form>
-<button id="close"> CANCEL </button> 
-</section> 
 
-</dialog> 
-
-<dialog id="d2">
-<section >
-<form action="" method="">
-<p> RESET YOUR PASSWORD HERE </p></br>
- <p><b>Enter your email adress here </br>(and wait for the reset email):</b> </p>
-<input type="email" placeholder="Enter your email adress"></br></br>
-<input id="bt" type="submit" value=" RECEIVE THE EMAIL "></br>
-</form>
-<button id="close2"> CANCEL </button> 
-</section> 
-
-</dialog> 
-
-<script>
-  var dialog = document.querySelector('#d1'); 
-  document.querySelector('#show').onclick = function() { dialog.show(); }; 
- document.querySelector('#close').onclick = function() { dialog.close(); }; 
- 
-   var dialog2 = document.querySelector('#d2'); 
-  document.querySelector('#show2').onclick = function() { dialog2.show(); }; 
- document.querySelector('#close2').onclick = function() { dialog2.close(); };
- </script>
 </header>
-<section  class="bg">
-<p> SIGN-IN HERE </p>
-<div>
+<div class="large">
+<section  class="bg"  > 
+<p> SIGN-IN HERE </p> 
 <form action="account.html">
 <p> <b>Username: </b></p>
-<input type="text" placeholder="Your username">
+<input type="text" placeholder="Your username"> 
 <p> <b>Password:</b> </p>
 <input type="password" placeholder="Enter your password"></br></br>
 <input id="bt" type="submit" value="SIGN-IN"></br></br>
 </form>
-</div>
+<a href="reset.html"><button >Reset your password here if forgotten</button></a></br>
+</br></br></br>
 </section>
 </center>
 </br></br></br></br>
+</div>
 </body>
 <footer> Copyright &copy 2019 </footer>
 </html>

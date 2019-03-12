@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "createdOn": "Sun Mar 10 2019 20:52:35 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Sun Mar 10 2019 20:52:35 GMT+0200 (Israel Standard Time)",
+    "subject": "Scola",
+    "message": "Scola my baby",
+    "parentMessageId": 3,
+    "status": "read",
+    "senderId": 3,
+    "receiverIndivId": 3,
+    "confidential": {
+      "messageCode": "88888888"
+    },
+    "receiverGroupId": [
+      3,
+      2
+    ]
+  },
+  {
+    "id": 2,
+    "createdOn": "Sun Mar 10 2019 20:52:55 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Sun Mar 10 2019 20:52:55 GMT+0200 (Israel Standard Time)",
+    "subject": "ScoBil",
+    "message": "Scola my baby",
+    "parentMessageId": 3,
+    "status": "read",
+    "senderId": 3,
+    "receiverIndivId": 3,
+    "confidential": {
+      "messageCode": "333"
+    },
+    "receiverGroupId": [
+      3,
+      2
+    ]
+  },
+  {
+    "id": 3,
+    "createdOn": "Sun Mar 10 2019 21:01:58 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Sun Mar 10 2019 21:01:58 GMT+0200 (Israel Standard Time)",
+    "subject": "ScoBil",
+    "message": "Scola my baby",
+    "parentMessageId": 3,
+    "status": "read",
+    "senderId": 3,
+    "receiverIndivId": 3,
+    "confidential": {
+      "messageCode": "4444"
+    },
+    "receiverGroupId": [
+      3,
+      2
+    ]
+  },
+  {
+    "id": 4,
+    "createdOn": "Sun Mar 10 2019 21:58:26 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Sun Mar 10 2019 21:58:26 GMT+0200 (Israel Standard Time)",
+    "subject": "JC",
+    "message": "JC",
+    "parentMessageId": 3,
+    "status": "read",
+    "senderId": 3,
+    "receiverIndivId": 3,
+    "confidential": {
+      "messageCode": ""
+    },
+    "receiverGroupId": [
+      3,
+      2
+    ]
+  }
+]
