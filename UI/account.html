@@ -7,7 +7,7 @@ EPICmail | Sign-in
 <link rel="stylesheet" href="css/css.css">
 </head>
 <body class="bodyy">
-<center>
+<centre>
 <header>
  
   <div class="container">
@@ -32,7 +32,7 @@ EPICmail | Sign-in
 </br>
 <p> IF YOU ARE AN ADMIN YOU HAVE RECEIVED A CODE.</br> PUT THAT CODE HERE TO SIGN-IN:</p></br>
 (The code will expire in 3 minutes)</br>
-<input type="password" placeholder="Paste the code here"></br></br>
+<input type="password" placeholder="Paste the code here" required></br></br>
 <input id="bt" type="submit" value=" SIGN-IN "></br>
 </form>
 <!-- assigning an id to the pop-up button in order to close it once called -->
@@ -40,11 +40,11 @@ EPICmail | Sign-in
 </section> </dialog>
 <!-- a script to manage the pop-up/dialog box -->
  <script> 
- <!-- selecting the id of the button that calls the pop-up -->
+ //<!-- selecting the id of the button that calls the pop-up -->
      var dialog21 = document.querySelector('#d21'); 
- <!-- selecting the id of the pop-up's button and assigning to it an action to do when clicked (to show the pop-up) -->
+ //<!-- selecting the id of the pop-up's button and assigning to it an action to do when clicked (to show the pop-up) -->
   document.querySelector('#show21').onclick = function() { dialog21.show(); }; 
-  <!-- selecting the id of the "CANCEL" button in the pop-up and assigning to it an action to do when clicked (to close the pop-up) -->
+ // <!-- selecting the id of the "CANCEL" button in the pop-up and assigning to it an action to do when clicked (to close the pop-up) -->
  document.querySelector('#close21').onclick = function() { dialog21.close(); };
  </script>
 </header>
@@ -62,7 +62,7 @@ EPICmail | Sign-in
 </div>
 </p>
 </section>
-</center>
+</centre>
 </br></br></br></br>
 </div>
 </body>
