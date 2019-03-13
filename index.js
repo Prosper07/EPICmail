@@ -4,6 +4,7 @@ const morgan = require('morgan')
 // EPICmail app
 const app = express()
 // Morgan
+
 app.use(morgan('tiny'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))

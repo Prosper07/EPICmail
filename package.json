@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon --exec babel-node index.js",
+    "test": " --require @babel/register test/**/*.test.js --exit",
+    "run": "babel-node index.js"
   },
   "keywords": [],
   "author": "Prosper7",
@@ -12,5 +14,14 @@
   "dependencies": {
     "express": "^4.16.4",
     "morgan": "^1.9.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/node": "^7.2.2",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/register": "^7.0.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0"
   }
 }
