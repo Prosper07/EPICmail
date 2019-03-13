@@ -7,7 +7,7 @@ EPICmail | Sign-in
 <link rel="stylesheet" href="css/css.css">
 </head>
 <body class="bodyy">
-<center>
+<centre>
 <header>
  
   <div class="container">
@@ -31,14 +31,93 @@ EPICmail | Sign-in
 <a href="sent.html"><button id="bt"> SENT MESSAGES </button></a>
 <a href="drafts.html"><button id="bt"> DRAFTS </button></a>
 <section  >
+<form action="message.html" method="">
 <div><b> INBOX </br> CHECK AN EMAIL AND TAKE ACTION: </b></div>
 <p>
-<table></table>
+    <centre>
+    <div id="scroll" style="overflow:scroll; height:200px;">
+<table >
+  <tr>
+    <th > check </th><th> subject </th><th> date </th>
+  </tr>
+  <tr>
+    <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+  <tr>
+      <td> <input type="checkbox" name="subject" value="Andela's Invitation"> </td><td> <b><a href="message.html"> Andela's Invitation </a></b> </td><td> date </td>
+  </tr>
+</table>
+      </div>
+    </centre>
 </p>
-<p><button > <b> READ </b> </button> <button > <b> REPLY </b> </button> <button > <b> DELETE </b> </button>
+<p><button onClick="JavaScript:submitBtn();"> <b> READ </b> </button>
+<button onClick="JavaScript:submitBtn();"> <b> REPLY </b> </button>
+<button onClick="JavaScript:submitBtn();"> <b> DELETE </b> </button>
  </p>
+	</form>
+	 <script>
+    function validateCheckBoxes() 
+    {
+        var isValid = false;
+        //alert("Check if any checkbox is not checked..."); 
+        var allRows = document.getElementsByTagName("input");
+        for (var i=0; i < allRows.length; i++) {
+            if (allRows[i].type == 'checkbox' && allRows[i].name == 'subject') {
+                if (allRows[i].checked == true) {
+                       return true;
+                }
+            }
+        }
+        return isValid;
+    }
+
+    function submitBtn (){
+        if (!validateCheckBoxes()){
+            return alert("no message selected");
+        }
+		}
+</script>
 </section>
-</center>
+</centre>
 </div>
 </body>
 <footer> Copyright &copy 2019 </footer>

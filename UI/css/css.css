@@ -57,15 +57,30 @@ dialog{
 textarea{
   min-height: 200px;
   min-width:800px;
-  background: #ffff90; /* light yellow color for text area */
+  background: rgb(207, 140, 81); /* brown color */
   color: #0000ff;
 }
-/* ccharacteristics of tables (to display the content comming from the back-end_ such as listing comming messages, sent messages, etc...) */
-table{
-  min-height: 100px;
-  min-width:800px;
-  background: #ffffff; /* white color for tables */
-  color: #0000ff;
+/* ccharacteristics of id "scroll" (to display the content comming from the back-end_ such as listing comming messages, sent messages, etc...) */
+table, td {
+  min-width:410px;
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+}
+
+th{
+  min-width:400px;
+  border-bottom: 1px solid black;
+  background: #00008f; 
+}
+
+#scroll{
+  padding: 4px 4px 4px 4px ;
+  margin: 21px 21px 21px 35px ; 
+  min-height: 300px;
+  max-width:1200px;
+  justify-content: center;
+  border: 1px solid rgb(207, 140, 81);
+  background: rgb(207, 140, 81); /* brown color */
 }
 /*this element and all sub-element related to it (header a, header li, etc...) discribes how the head of the page will be displayed (including menu buttons) */
 header{
