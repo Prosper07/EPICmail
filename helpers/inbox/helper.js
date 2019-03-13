@@ -13,12 +13,12 @@ const newDate = () => new Date().toString()
 function mustBeInArray(array, id, pwd) {
     return new Promise((resolve, reject) => {
         if ( pwd==="all" ){
-         resolve(array.find(r => r.receiverIndivId == id))
+         resolve(array.filter(r => r.receiverIndivId == id))
         } else {
          for (let i=1; i<=array.length; i++){
-            resolve(array.find(r => r.receiverIndivId == id && r.confidential.messageCode == pwd))}}
+            resolve(array.filter(r => r.receiverIndivId == id && r.confidential.messageCode == pwd))}}
         // row = array.find(r => r.receiverIndivId == id && r.confidential.messageCode == pwd)    
-        if (!(array.find(r => r.id == id && r.confidential.password == pwd))) {
+        if (!(array.filter(r => r.id == id && r.confidential.password == pwd))) {
             reject({
                 message: 'Error 404: You should provide a good ID and good code please',
                 status: 404
