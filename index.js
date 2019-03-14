@@ -1,17 +1,22 @@
 // Import packages
-const express = require('express')
-const morgan = require('morgan')
+import express from 'express';
+import bodyParser from 'body-parser';
+//import router from './routes/routes';
+
 // EPICmail app
 const app = express()
-// Morgan
 
-app.use(morgan('tiny'))
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
-app.use(require('./routes/message/index.routes'))
-// First route (root directory)
+//using body-parser
+app.use(express.json());
+app.use(bodyParser.json());
+
+app.use(router);
+
+// First route (Welcome page)
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to EPICmail' })
-})
+    res.json({ message: 'Welcome to EPICmail' });
+});
 // Starting server
-app.listen(process.env.PORT || 3000, () => console.log('All right'))
+app.listen(process.env.PORT || 3000, () => console.log('server running'));
+
+export default app;
