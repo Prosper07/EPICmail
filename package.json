@@ -2,13 +2,22 @@
   "name": "EPICmail",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-   "start": "nodemon --exec babel-node index.js"
+    "test": "nyc --reporter=html --reporter=text mocha --require @babel/core/register --timeout 5000 server/tests/*.js --exit",
+    "start": "nodemon --exec babel-node server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Prosper07/EPICmail.git"
   },
   "keywords": [],
   "author": "Prosper B. KILOLO",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Prosper07/EPICmail/issues"
+  },
+  "homepage": "",
   "dependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
