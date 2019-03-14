@@ -111,11 +111,11 @@ From scratch
 
     H). With DELETE Method: Type the following link in the          adress bar to delete a given sent message:
         - http://localhost:5000/api/v1/sent/X/Y
-                    (X is the ID of the sender, and Y is their password. To avoid every user to delete everybody's sent message)
+                    (X is the ID of the sender, and Y is the message's code. To avoid every user to delete everybody's sent message)
 
     H). With DELETE Method: Type the following link in the          adress bar to delete a given received message:
         - http://localhost:5000/api/v1/inbox/X/Y
-                    (X is the ID of the receiver, and Y is their password. To avoid every user to delete everybody's received message)
+                    (X is the ID of the receiver, and Y is the message's code.. To avoid every user to delete everybody's received message)
 
 They are other options which are still in construction.
 

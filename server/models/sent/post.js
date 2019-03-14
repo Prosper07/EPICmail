@@ -1,5 +1,5 @@
-let posts = require('../../data/sent/posts.json')
-const filename = './server/data/sent/posts.json'
+let posts = require('../../data/message/posts.json')
+const filename = './server/data/message/posts.json'
 const helper = require('../../helpers/sent/helper.js')
 
 function getPosts() {

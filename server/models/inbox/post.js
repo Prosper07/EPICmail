@@ -1,5 +1,5 @@
-let posts = require('../../data/inbox/posts.json')
-const filename = './server/data/inbox/posts.json'
+let posts = require('../../data/message/posts.json')
+const filename = './server/data/message/posts.json'
 const helper = require('../../helpers/inbox/helper.js')
 
 function getPosts() {

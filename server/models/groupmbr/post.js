@@ -1,6 +1,6 @@
-let posts = require('../../data/groupmbr/posts.json')
-const filename = './server/data/groupmbr/posts.json'
-const helper = require('../../helpers/groupmbr/helper.js')
+let posts = require('../../data/group/posts.json')
+const filename = './server/data/group/posts.json'
+const helper = require('../../helpers/group/helper.js')
 
 function getPosts() {
     return new Promise((resolve, reject) => {
