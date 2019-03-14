@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=html --reporter=text mocha --require @babel/core/register --timeout 5000 server/tests/*.js --exit",
-    "start": "nodemon --exec babel-node server/server.js"
+   "start": "nodemon --exec babel-node index.js"
   },
   "keywords": [],
   "author": "Prosper B. KILOLO",
