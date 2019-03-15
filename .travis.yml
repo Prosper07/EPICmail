@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- lts/*
+after_success:
+- npm run coverage
+deploy:
+  provider: heroku
+  api_key: 
+    secure: 393f04d1-e5ca-4670-b2f3-a152a0bed0d1
+  app: "epicmailapi"
+  on:
+    all_branches: true
