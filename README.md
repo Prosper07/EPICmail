@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/Prosper07/EPICmail.svg?branch=develop)](https://travis-ci.com/Prosper07/EPICmail) [![Maintainability](https://api.codeclimate.com/v1/badges/e7bd73880353f2a47079/maintainability)](https://codeclimate.com/github/Prosper07/EPICmail/maintainability)
+
 # Project Title : EPICmail
 
     A messaging online app where registered users can interact with each othert via messages over a structured system.
