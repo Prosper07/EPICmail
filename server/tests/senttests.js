@@ -22,4 +22,13 @@ chai.use(chaiHttp);
                   expect(res).to.have.property('status')
             });
       });
+      it('it should GET a given user with a given ID', () => {
+        chai.request(app)
+            .get('/api/v1/sent/1/7')
+            .end((err, res) => {
+              console.log(res.body)
+                  expect(res.body).to.be.an('array')
+                  expect(res).to.have.property('status')
+            });
+      });
   });
