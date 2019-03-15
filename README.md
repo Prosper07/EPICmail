@@ -1,8 +1,5 @@
-[![Build Status](https://travis-ci.com/Prosper07/EPICmail.svg?branch=develop)](https://travis-ci.com/Prosper07/EPICmail) 
+[![Build Status](https://travis-ci.com/Prosper07/EPICmail.svg?branch=develop)](https://travis-ci.com/Prosper07/EPICmail)[![Maintainability](https://api.codeclimate.com/v1/badges/e7bd73880353f2a47079/maintainability)](https://codeclimate.com/github/Prosper07/EPICmail/maintainability)[![Coverage Status](https://coveralls.io/repos/github/Prosper07/EPICmail/badge.svg?branch=develop)](https://coveralls.io/github/Prosper07/EPICmail?branch=develop)<a href='https://coveralls.io/github/Prosper07/EPICmail?branch=develop'><img src='https://coveralls.io/repos/github/Prosper07/EPICmail/badge.svg?branch=develop' alt='Coverage Status' /></a>
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/e7bd73880353f2a47079/maintainability)](https://codeclimate.com/github/Prosper07/EPICmail/maintainability)
-
-[![Coverage Status](https://coveralls.io/repos/github/Prosper07/EPICmail/badge.svg?branch=develop)](https://coveralls.io/github/Prosper07/EPICmail?branch=develop)
 
 # Project Title : EPICmail
 
