@@ -22,4 +22,13 @@ chai.use(chaiHttp);
                   expect(res).to.have.property('status')
             });
       });
+      it('it should GET all the users', () => {
+        chai.request(app)
+            .get('/api/v1/passwordusers')
+            .end((err, res) => {
+              console.log(res.body)
+                  expect(res.body).to.be.an('array')
+                  expect(res).to.have.property('status')
+            });
+      });
   });

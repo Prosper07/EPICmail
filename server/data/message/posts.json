@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": 1,
+    "createdOn": "Fri Mar 15 2019 12:20:42 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Fri Mar 15 2019 12:20:42 GMT+0200 (Israel Standard Time)",
+    "subject": "Bootcamp",
+    "message": "This Is Andela",
+    "parentMessageId": 3,
+    "status": "unread",
+    "senderId": 3,
+    "receiverIndivId": 4,
+    "confidential": {
+      "messageCode": "888"
+    }
+  },
+  {
+    "id": 2,
+    "createdOn": "Fri Mar 15 2019 12:25:04 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Fri Mar 15 2019 12:25:04 GMT+0200 (Israel Standard Time)",
+    "subject": "aaaaaa",
+    "message": "This Is Andela",
+    "parentMessageId": 3,
+    "status": "unread",
+    "senderId": 1,
+    "receiverIndivId": 7,
+    "confidential": {
+      "messageCode": "7"
+    }
+  }
+]

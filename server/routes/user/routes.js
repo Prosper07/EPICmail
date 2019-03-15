@@ -53,7 +53,7 @@ router.put('/api/v1/users/:id/:password', middlewares.mustBeInteger, middlewares
 
     await post.updatePost(id, password, req.body)
     .then(post => res.json({
-        message: `201 : Profile information of user number ${id} has been updated successfully`,
+        message: `200 : Profile information of user number ${id} has been updated successfully`,
         content: post
     }))
     .catch(err => {

@@ -25,5 +25,19 @@
       "password": "111",
       "notes": "I love everybody"
     }
+  },
+  {
+    "id": 3,
+    "createdOn": "Fri Mar 15 2019 12:13:24 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Fri Mar 15 2019 12:13:24 GMT+0200 (Israel Standard Time)",
+    "general": {
+      "email": "prosperkilolo@gmail.com",
+      "firstName": "Prosper",
+      "lastName": "KILOLO"
+    },
+    "confidential": {
+      "password": "333",
+      "notes": "I love everybody"
+    }
   }
 ]
