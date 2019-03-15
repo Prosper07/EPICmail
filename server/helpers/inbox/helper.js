@@ -10,21 +10,19 @@ const getNewId = (array) => {
 
 const newDate = () => new Date().toString()
 
-function mustBeInArray(array, id, pwd) {
+function mustBeInArray(array, id, password) {
     return new Promise((resolve, reject) => {
-        if ( pwd==="all" ){
-         resolve(array.filter(r => r.receiverIndivId == id))
+        if ( password==="unread" ){
+         resolve(array.filter(r => r.receiverIndivId == id && r.status == password))
         } else {
          for (let i=1; i<=array.length; i++){
-            resolve(array.filter(r => r.receiverIndivId == id && r.confidential.messageCode == pwd))}}
-        // row = array.find(r => r.receiverIndivId == id && r.confidential.messageCode == pwd)    
-        if (!(array.filter(r => r.id == id && r.confidential.password == pwd))) {
+            resolve(array.filter(r => r.receiverIndivId == id && r.confidential.messageCode == password))}}
+        if (!(array.filter(r => r.receiverIndivId == id && r.confidential.messageCode == password))) {
             reject({
                 message: 'Error 404: You should provide a good ID and good code please',
                 status: 404
             })
         }
-       // resolve(row)
     })
 }
 

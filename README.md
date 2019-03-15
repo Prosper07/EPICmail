@@ -27,19 +27,25 @@ From scratch
 
 7). Open Postman and choose a method between GET,POST, PUT, and DELETE method.
 
-    A). With GET Method: Type the following link in the adress      bar to get all received messages for a given user:
+    A). With GET Method: Type the following link in the adress      bar to get, as an admin, a detailed list of every user:
+        - http://localhost:5000/api/v1/passwordusers
+        
+    B). With GET Method: Type the following link in the adress      bar to get, as an admin, all messages of every user:
+        - http://localhost:5000/api/v1/passwordmessages
+        
+    C). With GET Method: Type the following link in the adress      bar to get all received messages for a given user:
         - http://localhost:5000/api/v1/inbox/X/Y
-                    (X is the ID of the receiver, and Y is their password. To avoid every user to see everybody's messages)
+                    (X is the ID of the receiver, and Y is the message code. To avoid every user to see everybody's messages)
         
-    B). With GET Method: Type the following link in the adress      bar to get all messages sent by a given user: 
+    D). With GET Method: Type the following link in the adress      bar to get all messages sent by a given user: 
         - http://localhost:5000/api/v1/sent/X/Y
-                    (X is the ID of the sender, and Y is the code of the message. To avoid every user to see everybody's messages)
+                    (X is the ID of the sender, and Y is is the message code. To avoid every user to see everybody's messages)
         
-    C). With GET Method: Type the following link in the adress      bar to get all user's unread message: 
-        - http://localhost:5000/api/v1/sent/X/unread
-                    (X is the ID of the user)
+    E). With GET Method: Type the following link in the adress      bar to get all user's unread message: 
+        - http://localhost:5000/api/v1/inbox/X/unread
+                    (X is the ID of the message receiver)
         
-    D). Now with POST Method: Type the following link in the        adress bar to create a user: 
+    F). Now with POST Method: Type the following link in the        adress bar to create a user: 
         - http://localhost:5000/api/v1/users
             Here is the format the data you are storing should take (example):
                     {
@@ -50,37 +56,28 @@ From scratch
                       },
                      "confidential": {
                         "password": "333",
-                        "groupCreatorId": 3,
-                        "groupParticipantId": [
-                           1
-                         ],
-                        "contactListId": [
-                           1,
-                           2,
-                           3
-                         ]
+                        "notes": "I love everybody"
                       }
                     }
             The ID, and the date & time of creation will be automatically added.
 
-    E). With POST Method: Type the following link in the        adress bar to send a message to a given user: 
-        - http://localhost:5000/api/v1/messages
+    G). With POST Method: Type the following link in the        adress bar to send a message to a given user: 
+        - http://localhost:5000/api/v1/sent
             Here is the format the data you are storing should take (example):
                     {
-                     "subject": "JC",
-                     "message": "JC",
+                     "subject": "Bootcamp",
+                     "message": "This Is Andela",
                      "parentMessageId": 3,
                      "status": "read",
                      "senderId": 3,
                      "receiverIndivId": 4,
-                     "receiverGroupId": [
-                       3,
-                       2
-                      ]
+                     "confidential": {
+                     "messageCode": "888"
+                        }
                     }
             The ID, and the date & time of creation will be automatically added.
 
-    F). Now with PUT Method: Type the following link in the        adress bar to update a given user's information: 
+    H). Now with PUT Method: Type the following link in the        adress bar to update a given user's information: 
         - http://localhost:5000/api/v1/users/X/Y
                     (X is the ID of the user, and Y is their password. To avoid every user to modify everybody's account information)
             Here is the format the data you are updating should take (example):
@@ -92,30 +89,22 @@ From scratch
                       },
                      "confidential": {
                         "password": "333",
-                        "groupCreatorId": 3,
-                        "groupParticipantId": [
-                           1
-                         ],
-                        "contactListId": [
-                           1,
-                           2,
-                           3
-                         ]
+                        "notes": "I love everybody",
                       }
                     }
             The date & time of update will be automatically added.
 
-    G). With DELETE Method: Type the following link in the          adress bar to delete a given user's account:
+    I). With DELETE Method: Type the following link in the          adress bar to delete a given user's account:
         - http://localhost:5000/api/v1/users/X/Y
                     (X is the ID of the user, and Y is their password. To avoid every user to delete everybody's account)
 
-    H). With DELETE Method: Type the following link in the          adress bar to delete a given sent message:
+    J). With DELETE Method: Type the following link in the          adress bar to delete a given sent message:
         - http://localhost:5000/api/v1/sent/X/Y
-                    (X is the ID of the sender, and Y is the message's code. To avoid every user to delete everybody's sent message)
+                    (X is the ID of the message, and Y is the message's code. To avoid every user to delete everybody's sent message)
 
-    H). With DELETE Method: Type the following link in the          adress bar to delete a given received message:
+    K). With DELETE Method: Type the following link in the          adress bar to delete a given received message:
         - http://localhost:5000/api/v1/inbox/X/Y
-                    (X is the ID of the receiver, and Y is the message's code.. To avoid every user to delete everybody's received message)
+                    (X is the ID of the message, and Y is the message's code.. To avoid every user to delete everybody's received message)
 
 They are other options which are still in construction.
 

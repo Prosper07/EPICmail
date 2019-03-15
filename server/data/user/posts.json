@@ -1,1 +1,29 @@
-[]
+[
+  {
+    "id": 1,
+    "updatedOn": "Fri Mar 15 2019 10:52:50 GMT+0200 (Israel Standard Time)",
+    "general": {
+      "email": "prosperkilolo@gmail.com",
+      "firstName": "Prosper",
+      "lastName": "Andelan"
+    },
+    "confidential": {
+      "password": "333",
+      "notes": "I love everybody"
+    }
+  },
+  {
+    "id": 2,
+    "createdOn": "Fri Mar 15 2019 09:24:48 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Fri Mar 15 2019 09:24:48 GMT+0200 (Israel Standard Time)",
+    "general": {
+      "email": "prosperkilolo@gmail.com",
+      "firstName": "Andela",
+      "lastName": "Team 4"
+    },
+    "confidential": {
+      "password": "111",
+      "notes": "I love everybody"
+    }
+  }
+]
