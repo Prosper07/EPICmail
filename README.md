@@ -92,7 +92,7 @@ From scratch
                       },
                      "confidential": {
                         "password": "333",
-                        "notes": "I love everybody",
+                        "notes": "I love everybody"
                       }
                     }
             The date & time of update will be automatically added.
