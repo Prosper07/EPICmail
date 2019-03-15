@@ -4,8 +4,8 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha --recursive ./server/tests/*.js --exit --require @babel/register",
-    "coverage": "nyc --reporter=html --reporter=text mocha --require @babel/core/register --timeout 5000 server/tests/*.js --exit",
+    "test": "nyc --reporter=text mocha ./server/tests/*.js --require @babel/register --timeout 10000 --exit",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
     "start": "nodemon --exec babel-node server/server.js"
   },
   "keywords": [],
@@ -19,6 +19,7 @@
     "@babel/preset-env": "^7.3.4",
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
+    "coveralls": "^3.0.3",
     "express": "^4.16.4",
     "joi": "^13.1.0",
     "jsonwebtoken": "^8.5.0",
