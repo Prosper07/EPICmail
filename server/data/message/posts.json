@@ -26,5 +26,19 @@
     "confidential": {
       "messageCode": "7"
     }
+  },
+  {
+    "id": 3,
+    "createdOn": "Sat Mar 16 2019 04:14:06 GMT+0200 (Israel Standard Time)",
+    "updatedOn": "Sat Mar 16 2019 04:14:06 GMT+0200 (Israel Standard Time)",
+    "subject": "Bootcamp",
+    "message": "This Is Andela",
+    "parentMessageId": 3,
+    "status": "read",
+    "senderId": 3,
+    "receiverIndivId": 4,
+    "confidential": {
+      "messageCode": "888"
+    }
   }
 ]
