@@ -31,10 +31,10 @@ From scratch
 7). Open Postman and choose a method between GET,POST, PUT, and DELETE method.
 
     A). With GET Method: Type the following link in the adress      bar to get, as an admin, a detailed list of every user:
-        - http://localhost:5000/api/v1/passwordusers
+        - http://localhost:5000/api/v1/adminusers
         
     B). With GET Method: Type the following link in the adress      bar to get, as an admin, all messages of every user:
-        - http://localhost:5000/api/v1/passwordmessages
+        - http://localhost:5000/api/v1/adminmessages
         
     C). With GET Method: Type the following link in the adress      bar to get all received messages for a given user:
         - http://localhost:5000/api/v1/inbox/X/Y

@@ -8,7 +8,7 @@ import middlewares from '../../helpers/user/m';
 const router = express.Router();
 
 /* See every user by the admin.. */
-router.get('/api/v1/passwordusers/', async (req, res) => {
+router.get('/api/v1/adminusers/', async (req, res) => {
     await post.getPosts()
     .then(posts => res.json(posts))
     .catch(err => {

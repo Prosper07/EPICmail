@@ -8,7 +8,7 @@ import middlewares from '../../helpers/sent/m';
 const router = express.Router();
 
 /* See every sent message by the admin.. */
- router.get('/api/v1/passwordmessages/', async (req, res) => {
+ router.get('/api/v1/adminmessages/', async (req, res) => {
      await post.getPosts()
      .then(posts => res.json(posts))
      .catch(err => {
