@@ -27,7 +27,7 @@ chai.use(chaiHttp);
             .get('/api/v1/inbox/7/7')
             .end((err, res) => {
               console.log(res.body)
-                  expect(res.body).to.be.an('array')
+                  expect(res.body).to.be.an('object')
                   expect(res).to.have.property('status')
             });
       });
