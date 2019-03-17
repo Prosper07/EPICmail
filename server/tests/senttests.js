@@ -40,4 +40,23 @@ chai.use(chaiHttp);
                   expect(res).to.have.property('status')
             });
       });
+      it('should respond with redirect on post', function(done) {
+        chai.request(app)
+          .post('/api/v1/sent')
+          .send({ "subject": "Bootcamp",
+          "message": "This Is Andela",
+          "parentMessageId": 3,
+          "status": "read",
+          "senderId": 3,
+          "receiverIndivId": 4,
+          "confidential": {
+          "messageCode": "888"
+             }})
+          .expect('Content-Type', /json/)
+          .end(function(err, res) {
+            if (err) done(err);
+            res.body.should.have.property("subject");
+          });
+          done();
+      });
   });
