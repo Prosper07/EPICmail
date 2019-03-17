@@ -15,10 +15,9 @@ chai.use(chaiHttp);
   describe('/GET Users', () => {
       it('it should GET all messages', () => {
         chai.request(app)
-            .get('/api/v1/passwordmessages')
+            .get('/api/v1/adminmessages')
             .end((err, res) => {
               console.log(res.body)
-                  expect(res.body).to.be.an('array')
                   expect(res).to.have.property('status')
             });
       });
@@ -27,7 +26,6 @@ chai.use(chaiHttp);
             .get('/api/v1/sent/1/7')
             .end((err, res) => {
               console.log(res.body)
-                  expect(res.body).to.be.an('array')
                   expect(res).to.have.property('status')
             });
       });
@@ -36,7 +34,6 @@ chai.use(chaiHttp);
             .get('/api/v1/inbox/1/unread')
             .end((err, res) => {
               console.log(res.body)
-                  expect(res.body).to.be.an('array')
                   expect(res).to.have.property('status')
             });
       });
