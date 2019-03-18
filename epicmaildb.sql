@@ -1,9 +1,9 @@
-DROP DATABASE IF EXISTS puppies;
+DROP DATABASE IF EXISTS epicmaildb;
 CREATE DATABASE puppies;
 
 \c puppies;
 
-CREATE TABLE pups (
+CREATE TABLE users (
   ID SERIAL PRIMARY KEY,
   email VARCHAR,
   firstname VARCHAR,
