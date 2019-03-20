@@ -23,18 +23,18 @@ pool.on('connect', () => {
 
 
 /**
- * Create Reflection Table
+ * Create Message Table
  */
-const createReflectionTable = () => {
+const createMessageTable = () => {
   const queryText =
     `CREATE TABLE IF NOT EXISTS
-      reflections(
+      message(
         id SERIAL PRIMARY KEY,
-        success TEXT NOT NULL,
-        low_point TEXT NOT NULL,
-        take_away TEXT NOT NULL,
-        owner_id UUID NOT NULL,
-        FOREIGN KEY (owner_id) REFERENCES users (id) ON DELETE CASCADE
+        subject TEXT NOT NULL,
+        content TEXT NOT NULL,
+        receiver_id TEXT NOT NULL,
+        sender_id SERIAL NOT NULL,
+        FOREIGN KEY (sender_id) REFERENCES users (id) ON DELETE CASCADE
       )`;
 
   pool.query(queryText)
@@ -56,7 +56,8 @@ const createUserTable = () => {
     `CREATE TABLE IF NOT EXISTS
       users(
         id SERIAL PRIMARY KEY,
-        email VARCHAR(128) UNIQUE NOT NULL,
+        name VARCHAR(128) NOT NULL
+        email VARCHAR(128) NOT NULL,
         password VARCHAR(128) NOT NULL
       )`;
 
@@ -72,7 +73,7 @@ const createUserTable = () => {
 }
 
 /**
- * Drop Reflection Table
+ * Drop Message Table
  */
 const dropReflectionTable = () => {
   const queryText = 'DROP TABLE IF EXISTS reflections returning *';
@@ -123,7 +124,7 @@ pool.on('remove', () => {
 
 
 module.exports = {
-  createReflectionTable,
+  createMessageTable,
   createUserTable,
   createAllTables,
   dropUserTable,

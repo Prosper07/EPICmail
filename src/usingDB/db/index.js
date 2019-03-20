@@ -1,9 +1,6 @@
 // src/usingDB/models/index.js
-import dotenv from 'dotenv';
-
-dotenv.config();
-
 const pg = require('pg');
+const {Pool} = require('pg');
 
 const config = {
     user: 'epicmailapi', //this is the db user credential
@@ -21,21 +18,7 @@ pool.on('connect', () => {
 });
 
 export default {
-  /**
-   * DB Query
-   * @param {object} req
-   * @param {object} res
-   * @returns {object} object 
-   */
-  query(text, params){
-    return new Promise((resolve, reject) => {
-      pool.query(text, params)
-      .then((res) => {
-        resolve(res);
-      })
-      .catch((err) => {
-        reject(err);
-      })
-    })
-  }
+   query (text, params, callback){
+     return pool.query(text, params, callback)
+   }
 }
