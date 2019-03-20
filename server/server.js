@@ -1,28 +1,24 @@
-import '@babel/polyfill';
+// server.js
 import express from 'express';
-import bodyParser from 'body-parser';
+import '@babel/polyfill';
+import Contr from '../src/usingDB/controllers/Controller';
+import bodyParser from 'body-parser'
 
-import user from './routes/user/routes';
-import sent from './routes/sent/routes';
-import inbox from './routes/inbox/routes';
+const User = Contr;
+const app = express()
 
-const app = express();
-app.use(express.json());
-app.use(bodyParser.json());
+app.use(express.json())
+app.use(bodyParser.urlencoded({extended : true}))
+app.use(bodyParser.json())
 
-// Managing routes
-app.use(user);
-app.use(sent);
-app.use(inbox);
-
-// (Welcome page)
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to EPICmail' })
-})
-
-// Port listening
-app.listen(process.env.PORT || 5000, () => {
-  console.log('server running and listenning on port 5000');
+  return res.status(200).send({'message': 'EPICMAIL APP'});
 });
 
-export default app;
+
+app.post('/api/v2/users/signup', User.signup);
+app.get('/api/v2/users', User.getAll);
+app.post('/api/v2/users/login', User.signin);
+
+app.listen(5540)
+console.log('app running on port ', 5540);

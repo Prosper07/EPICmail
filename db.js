@@ -25,7 +25,7 @@ pool.on('connect', () => {
 /**
  * Create Message Table
  */
-const createReflectionTable = () => {
+const createMessageTable = () => {
   const queryText =
     `CREATE TABLE IF NOT EXISTS
       message(
@@ -124,7 +124,7 @@ pool.on('remove', () => {
 
 
 module.exports = {
-  createReflectionTable,
+  createMessageTable,
   createUserTable,
   createAllTables,
   dropUserTable,
