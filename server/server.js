@@ -1,28 +1,20 @@
-import '@babel/polyfill';
+// server.js
 import express from 'express';
-import bodyParser from 'body-parser';
+import dotenv from 'dotenv';
+import '@babel/polyfill';
+import ReflectionWithDB from '../src/usingDB/controllers/Reflection';
 
-import user from './routes/user/routes';
-import sent from './routes/sent/routes';
-import inbox from './routes/inbox/routes';
+dotenv.config();
+const Reflection = ReflectionWithDB;
+const app = express()
 
-const app = express();
-app.use(express.json());
-app.use(bodyParser.json());
+app.use(express.json())
 
-// Managing routes
-app.use(user);
-app.use(sent);
-app.use(inbox);
-
-// (Welcome page)
 app.get('/', (req, res) => {
-    res.json({ message: 'Welcome to EPICmail' })
-})
-
-// Port listening
-app.listen(process.env.PORT || 5000, () => {
-  console.log('server running and listenning on port 5000');
+  return res.status(200).send({'message': 'YAY! Congratulations! Your first endpoint is working'});
 });
 
-export default app;
+app.post('/api/v2/users', Reflection.create);
+
+app.listen(6500)
+console.log('app running on port ', 6500);
