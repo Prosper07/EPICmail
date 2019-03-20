@@ -15,6 +15,7 @@ app.get('/', (req, res) => {
   return res.status(200).send({'message': 'EPICMAIL APP'});
 });
 
+
 app.post('/api/v2/users/signup', User.signup);
 app.get('/api/v2/users', User.getAll);
 app.post('/api/v2/users/login', User.signin);
