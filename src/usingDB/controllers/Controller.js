@@ -1,7 +1,7 @@
 import db from '../db';
 import Helper from './Helper';
 import bcrypt from 'bcrypt'
-//import jwt from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 
 const Contr = {
   async signup(req, res) {
@@ -37,8 +37,15 @@ const Contr = {
     const findAllQuery = 'SELECT * FROM users';
     const {rows}= await db.query(findAllQuery);
     console.log(rows);
-    res.json({
-      data:rows
+    jwt.verify(req.token, 'secret', (err, authData) => {
+      if(err){
+        res.sendStatus(403);
+      } else {
+        res.json({
+          authData,
+          data:rows
+        })
+      }
     })
   },
 
@@ -59,15 +66,36 @@ const isVerified = bcrypt.compareSync(req.body.password, a)
 if(!isVerified){
   return res.status(400).send({ 'message': 'The credentials you provided is incorrect' });
 }
-
-     res.json({
-      message : " Welcome to your EPICmail account!",
-      data: rows[0]
-      })
+jwt.sign(rows[0] ,'secret', (err, token) =>{
+  res.json({
+    message : " Welcome to your EPICmail account!",
+    data: rows[0],
+    token
+  })
+});
+    //  res.json({
+    //   message : " Welcome to your EPICmail account!",
+    //   data: rows[0]
+    //   })
     
     
     }
+},
+
+async verifyToken(req, res, next){
+  const bearerHeader = req.headers['authorization'];
+
+  if(typeof bearerHeader !== 'undefined'){
+    const bearer = bearerHeader.split(' ');
+    const bearerToken = bearer[1];
+    req.token = bearerToken;
+    next();
+  } else {
+    res.sendStatus(403);
+  }
 }
+
 }
+
 
 export default Contr;
