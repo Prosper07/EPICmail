@@ -7,7 +7,7 @@ import bodyParser from 'body-parser'
 const User = Contr;
 const app = express()
 
-app.use(express.json())
+
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(bodyParser.json())
 
