@@ -82,8 +82,8 @@ const Contr = {
 
   async deletegroup(req, res) {
     const deleteQuery = 'DELETE FROM groups WHERE id=$1 returning *';
-      const { rows } = db.query(deleteQuery, [req.params.id]);
-      if( Object.entries(rows).length == 0 ) {
+      const { rowCount } = db.query(deleteQuery, [req.params.id]);
+      if( rowCount == 0 ) {
         return res.status(404).send({'message': 'group not found'});
       } else {
       return res.status(204).send({ 'message': 'deleted' });
