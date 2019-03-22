@@ -4,12 +4,11 @@ const { Pool } = require('pg');
 const pg = require('pg');
 
 const config = {
-    user: 'epicmailapi', //this is the db user credential
-    database: 'propser',
-    password: '1111',
-    port: 5432,
-    max: 10, // max number of clients in the pool
-    idleTimeoutMillis: 30000,
+    Host: 'ec2-75-101-131-79.compute-1.amazonaws.com',
+    Database: 'd3kl8aqsvpjoa',
+    User: 'eoifyudvsrleapb', //this is the db user credential
+    Port: 5432,
+    password: '5e5a6878845c8582f0893dfb4e2a08d63dc071d54b7db6885170bf6d9f39235b',
   };
 
 const pool = new pg.Pool(config);
