@@ -78,7 +78,7 @@ const createUserTable = () => {
 const createGroupTable = () => {
   const queryText =
     `CREATE TABLE IF NOT EXISTS
-      group(
+      groups (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) UNIQUE NOT NULL,
         roleDescription VARCHAR(255) NOT NULL,
@@ -134,8 +134,8 @@ const dropUserTable = () => {
 /**
  * Drop Group Table
  */
-const dropUserTable = () => {
-  const queryText = 'DROP TABLE IF EXISTS group returning *';
+const dropGroupTable = () => {
+  const queryText = 'DROP TABLE IF EXISTS groups returning *';
   pool.query(queryText)
     .then((res) => {
       console.log(res);
@@ -155,7 +155,7 @@ module.exports = {
   createGroupTable,
   dropUserTable,
   dropMessageTable,
-  dropUserTable
+  dropGroupTable
 };
 
 require('make-runnable');
