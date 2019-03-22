@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
 
 //database routes
-app.post('/api/v2/users/deletegroup', User.deletegroup);
+app.delete('/api/v2/users/deletegroup/:id', User.deletegroup);
 app.post('/api/v2/users/creategroup', User.creategroup);
 app.post('/api/v2/users/signup', User.signup);
 app.post('/api/v2/users', User.verifyToken ,User.getAll);
