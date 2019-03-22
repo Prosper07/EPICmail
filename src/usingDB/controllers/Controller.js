@@ -84,9 +84,9 @@ const Contr = {
     const deleteQuery = 'DELETE FROM groups WHERE id=$1 returning *';
       const { rowCount } = db.query(deleteQuery, [req.params.id]);
       if( rowCount == 0 ) {
-        return res.status(404).send({'message': 'group not found'});
+        return res.status(404).json({'message': 'group not found'});
       } else {
-      return res.status(204).send({ 'message': 'deleted' });
+      return res.status(204).json({ message: 'deleted' });
       }
   },
 
