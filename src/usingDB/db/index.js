@@ -4,7 +4,7 @@ const {Pool} = require('pg');
 
 const config = {
     user: 'epicmailapi', //this is the db user credential
-    database: 'epicmailapidb',
+    database: 'propser',
     password: '1111',
     port: 5432,
     max: 10, // max number of clients in the pool
