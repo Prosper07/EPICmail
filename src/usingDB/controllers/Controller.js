@@ -22,9 +22,9 @@ const Contr = {
     ];
     db.query(createQuery, values, (err, result) => {
       if(err){
-        res.status(400).json({
-          status: 400,
-          error : "email already exists"
+        res.status(500).json({
+          status: 500,
+          error : err+""
         })
       } else {
       res.json({

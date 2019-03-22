@@ -1,17 +1,11 @@
-// db.js
-const { Pool } = require('pg');
+import {Pool} from 'pg';
+import dotenv from 'dotenv'; 
 
-const pg = require('pg');
+dotenv.config();
 
-const config = {
-    database: 'propser',
-    password: '1111',
-    port: 5432,
-    max: 10, // max number of clients in the pool
-    idleTimeoutMillis: 30000,
-  };
-
-const pool = new pg.Pool(config);
+const pool = new Pool({
+  connectionString : process.env.DATABASE_URL
+});
 
 pool.on('connect', () => {
   console.log('connected to the Database');
