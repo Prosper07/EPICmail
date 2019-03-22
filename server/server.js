@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/v2/users/signup', User.signup);
-app.get('/api/v2/users', User.getAll);
+app.post('/api/v2/users', User.verifyToken ,User.getAll);
 app.post('/api/v2/users/login', User.signin);
 
 app.listen(5540)
