@@ -29,7 +29,8 @@ app.get('/', (req, res) => {
 
 
 //database routes
-app.post('/api/v2/users/creategroup', User.verifyToken ,User.creategroup);
+app.post('/api/v2/users/deletegroup', User.deletegroup);
+app.post('/api/v2/users/creategroup', User.creategroup);
 app.post('/api/v2/users/signup', User.signup);
 app.post('/api/v2/users', User.verifyToken ,User.getAll);
 app.post('/api/v2/users/login', User.signin);

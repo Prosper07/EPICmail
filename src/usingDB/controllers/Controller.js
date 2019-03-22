@@ -80,6 +80,16 @@ const Contr = {
     })
   },
 
+  async deletegroup(req, res) {
+    const deleteQuery = 'DELETE FROM groups WHERE id=$1 returning *';
+      const { rows } = db.query(deleteQuery, [req.params.id]);
+      if( Object.entries(rows).length == 0 ) {
+        return res.status(404).send({'message': 'group not found'});
+      } else {
+      return res.status(204).send({ 'message': 'deleted' });
+      }
+  },
+
   async signin(req, res) {
     if (!req.body.email || !req.body.password) {
       return res.status(400).send({'message': 'Both email and password are mendatory'});
