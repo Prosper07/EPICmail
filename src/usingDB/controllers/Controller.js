@@ -1,4 +1,4 @@
-import db from '../db';
+import db from '../db/index';
 import Helper from './Helper';
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken';
@@ -29,7 +29,7 @@ const Contr = {
       } else {
       res.json({
         message : " Congratulation, you now have an EPICmail account!",
-        data:values
+        data:result.rows
         })
       }
     });
@@ -47,17 +47,16 @@ const Contr = {
       req.body.roledescription,
       req.body.owner
     ];
-
-            db.query(createGroup, values, (err, result) => {
+      db.query(createGroup, values, (err, result) => {
               if(err){
-                res.status(400).json({
-                  status: 400,
-                  error : " Group name already exists"
+                res.status(500).json({
+                  status: 500,
+                  error : err+""
                 })
               } else {
                     res.json({
                       message : " Congratulation, you have created a group!",
-                      data:values
+                      data:result.rows
                     })
                   }
             });
