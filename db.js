@@ -81,8 +81,8 @@ const createGroupTable = () => {
       groups (
         id SERIAL PRIMARY KEY,
         name VARCHAR(255) UNIQUE NOT NULL,
-        roleDescription VARCHAR(255) NOT NULL,
-        Owner VARCHAR (255) NOT NULL
+        roledescription VARCHAR(255) NOT NULL,
+        owner integer NOT NULL
       )`;
 
   pool.query(queryText)
