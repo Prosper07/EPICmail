@@ -5,12 +5,15 @@ import jwt from 'jsonwebtoken';
 
 const Contr = {
   async signup(req, res) {
-    if (!req.body.email || !req.body.password) {
+    const password = req.body.password;
+    if (!req.body.email || !password) {
       return res.status(400).send({'message': 'Both email and password are mendatory'});
     } else if (!Helper.isValidEmail(req.body.email)) {
       return res.status(400).send({ 'message': 'Please enter a valid email address' });
+    } else if (password.length < 5 || password.length > 10) {
+      return res.status(400).send({ 'message': 'The password should have characters more than 4 or less than 11' });
     } else {
-    const hashPassword = Helper.hashPassword(req.body.password);
+    const hashPassword = Helper.hashPassword(password);
     const createQuery = `INSERT INTO
     users( email, password) VALUES($1, $2) returning *`;
     const values = [
@@ -60,9 +63,12 @@ const Contr = {
     const values = [email, password];
 
     const {rows}= await db.query(getOne, [req.body.email]);
+    if ( Object.entries(rows).length == 0 ) {
+      return res.status(400).send({ 'message': 'User with this email does not exists in the system' });
+    } else {
+    
     const a = rows[0].password;
-console.log(a);
-const isVerified = bcrypt.compareSync(req.body.password, a)
+    const isVerified = bcrypt.compareSync(req.body.password, a)
 if(!isVerified){
   return res.status(400).send({ 'message': 'The credentials you provided is incorrect' });
 }
@@ -77,7 +83,7 @@ jwt.sign(rows[0] ,'secret', (err, token) =>{
     //   message : " Welcome to your EPICmail account!",
     //   data: rows[0]
     //   })
-    
+  }
     
     }
 },
