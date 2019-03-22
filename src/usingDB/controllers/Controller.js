@@ -36,10 +36,38 @@ const Contr = {
     }
   },
 
+  async creategroup(req, res) {
+    if (!req.body.name || !req.body.roledescription || !req.body.owner) {
+      return res.status(400).send({'message': 'All the fields (name, roledescription, owner) mendatory!'});
+    } else {
+    const createGroup = `INSERT INTO
+    groups( name, roledescription, owner) VALUES($1, $2, $3) returning *`;
+    const values = [
+      req.body.name,
+      req.body.roledescription,
+      req.body.owner
+    ];
+
+            db.query(createGroup, values, (err, result) => {
+              if(err){
+                res.status(400).json({
+                  status: 400,
+                  error : " Group name already exists"
+                })
+              } else {
+                    res.json({
+                      message : " Congratulation, you have created a group!",
+                      data:values
+                    })
+                  }
+            });
+          
+    };
+    },
+
   async getAll(req, res) {
     const findAllQuery = 'SELECT * FROM users';
     const {rows}= await db.query(findAllQuery);
-    console.log(rows);
     jwt.verify(req.token, 'secret', (err, authData) => {
       if(err){
         res.sendStatus(403);
