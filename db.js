@@ -1,14 +1,11 @@
 // db.js
 const { Pool } = require('pg');
-const dotenv = require('dotenv');
-
-dotenv.config();
 
 const pg = require('pg');
 
 const config = {
     user: 'epicmailapi', //this is the db user credential
-    database: 'epicmailapidb',
+    database: 'propser',
     password: '1111',
     port: 5432,
     max: 10, // max number of clients in the pool
@@ -30,16 +27,19 @@ const createMessageTable = () => {
     `CREATE TABLE IF NOT EXISTS
       message(
         id SERIAL PRIMARY KEY,
-        subject TEXT NOT NULL,
-        content TEXT NOT NULL,
-        receiver_id TEXT NOT NULL,
-        sender_id SERIAL NOT NULL,
-        FOREIGN KEY (sender_id) REFERENCES users (id) ON DELETE CASCADE
+        createdOn TIMESTAMP,
+        subject VARCHAR (50) NOT NULL,
+        message TEXT NOT NULL,
+        parentMessageId integer,
+        status VARCHAR (50),
+        senderId integer NOT NULL,
+        receiverId integer NULL
       )`;
 
   pool.query(queryText)
     .then((res) => {
       console.log(res);
+      console.log("success");
       pool.end();
     })
     .catch((err) => {
@@ -56,14 +56,39 @@ const createUserTable = () => {
     `CREATE TABLE IF NOT EXISTS
       users(
         id SERIAL PRIMARY KEY,
-        name VARCHAR(128) NOT NULL
-        email VARCHAR(128) NOT NULL,
-        password VARCHAR(128) NOT NULL
+        email VARCHAR(255) UNIQUE NOT NULL,
+        password VARCHAR (255) NOT NULL
       )`;
 
   pool.query(queryText)
     .then((res) => {
       console.log(res);
+      console.log("success");
+      pool.end();
+    })
+    .catch((err) => {
+      console.log(err);
+      pool.end();
+    });
+}
+
+/**
+ * Create Group Table
+ */
+const createGroupTable = () => {
+  const queryText =
+    `CREATE TABLE IF NOT EXISTS
+      group(
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255) UNIQUE NOT NULL,
+        roleDescription VARCHAR(255) NOT NULL,
+        Owner VARCHAR (255) NOT NULL
+      )`;
+
+  pool.query(queryText)
+    .then((res) => {
+      console.log(res);
+      console.log("success");
       pool.end();
     })
     .catch((err) => {
@@ -75,11 +100,12 @@ const createUserTable = () => {
 /**
  * Drop Message Table
  */
-const dropReflectionTable = () => {
-  const queryText = 'DROP TABLE IF EXISTS reflections returning *';
+const dropMessageTable = () => {
+  const queryText = 'DROP TABLE IF EXISTS message returning *';
   pool.query(queryText)
     .then((res) => {
       console.log(res);
+      console.log("success");
       pool.end();
     })
     .catch((err) => {
@@ -87,6 +113,7 @@ const dropReflectionTable = () => {
       pool.end();
     });
 }
+
 /**
  * Drop User Table
  */
@@ -95,6 +122,7 @@ const dropUserTable = () => {
   pool.query(queryText)
     .then((res) => {
       console.log(res);
+      console.log("success");
       pool.end();
     })
     .catch((err) => {
@@ -102,34 +130,32 @@ const dropUserTable = () => {
       pool.end();
     });
 }
-/**
- * Create All Tables
- */
-const createAllTables = () => {
-  createUserTable();
-  createReflectionTable();
-}
-/**
- * Drop All Tables
- */
-const dropAllTables = () => {
-  dropUserTable();
-  dropReflectionTable();
-}
 
-pool.on('remove', () => {
-  console.log('client removed');
-  process.exit(0);
-});
+/**
+ * Drop Group Table
+ */
+const dropUserTable = () => {
+  const queryText = 'DROP TABLE IF EXISTS group returning *';
+  pool.query(queryText)
+    .then((res) => {
+      console.log(res);
+      console.log("success");
+      pool.end();
+    })
+    .catch((err) => {
+      console.log(err);
+      pool.end();
+    });
+}
 
 
 module.exports = {
   createMessageTable,
   createUserTable,
-  createAllTables,
+  createGroupTable,
   dropUserTable,
-  dropReflectionTable,
-  dropAllTables
+  dropMessageTable,
+  dropUserTable
 };
 
 require('make-runnable');
