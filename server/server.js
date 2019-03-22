@@ -48,7 +48,7 @@ app.post('/api/v2/users/signup', User.signup);
 app.post('/api/v2/users', User.verifyToken ,User.getAll);
 app.post('/api/v2/users/login', User.signin);
 
-app.listen(5540, () =>{
+app.listen(process.env.PORT || 5540, () =>{
   createTables();
   console.log('listenning on port 5540')
 })
