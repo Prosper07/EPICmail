@@ -24,7 +24,8 @@ const Contr = {
       if(err){
         res.status(500).json({
           status: 500,
-          error : err+""
+          error : err+"",
+          message : " This email address does already exists"
         })
       } else {
       res.json({

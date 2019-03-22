@@ -11,8 +11,21 @@ describe('Create user', () => {
         chai.request(server)
         .get('/api/v2/users')
         .end(function(err, res){
-            res.should.have.status(200);
+            res.body.should.have.status(403);
             done();
         });
     });
-});
+
+    it('should not register an existing user', (done) => {
+        chai.request(server)
+        .post('/api/v2/users/signup')
+        .send({
+            "password": "11111",
+            "email": "b@gamail.com"
+        })
+        .end((err, res) => {
+            res.body.should.have.status(500)
+            done()
+        })
+})
+})

@@ -4,7 +4,9 @@
 # Project Title : EPICmail
 
     A messaging online app where registered users can interact with each othert via messages over a structured system.
-    The app is still in building mode, so if you want to see how it will be displayed in front-end, follow its gh-pages link -> https://prosper07.github.io/EPICmail/ . Interact also with its back-end (hosted on heroku) via this link -> https://epicmailapi.herokuapp.com/.
+    The app is still in building mode, so if you want to see how it will be displayed in front-end, 
+    follow its gh-pages link -> https://prosper07.github.io/EPICmail/ . 
+    Interact also with its back-end (hosted on heroku) via this link -> https://epicmailapi.herokuapp.com/.
 
 ## Getting Started, Installing & Deployment
 
@@ -22,7 +24,7 @@ From scratch
 
 4). Now run the app by typing <npm start>
 
-5). Go to your browser and type <http://localhost:5000> in your adress bar. Now you see the Welcome page, and can only have access to data that are stored in the app, but cannot put a data or record anything. To do it,
+5). Go to your browser and type <http://localhost:5540> in your adress bar. Now you see the Welcome page, and can only have access to data that are stored in the app, but cannot put a data or record anything. To do it,
 
 6). Dowload Postman (an tool which shall help you to put data, to update them, to delete them, and also to get them from the app). Make sure you have installed it in your system (you can download it via this link https://www.getpostman.com )
 
@@ -31,25 +33,25 @@ From scratch
 7). Open Postman and choose a method between GET,POST, PUT, and DELETE method.
 
     A). With GET Method: Type the following link in the adress      bar to get, as an admin, a detailed list of every user:
-        - http://localhost:5000/api/v1/adminusers
+        - http://localhost:5540/api/v1/adminusers
         
     B). With GET Method: Type the following link in the adress      bar to get, as an admin, all messages of every user:
-        - http://localhost:5000/api/v1/adminmessages
+        - http://localhost:5540/api/v1/adminmessages
         
     C). With GET Method: Type the following link in the adress      bar to get all received messages for a given user:
-        - http://localhost:5000/api/v1/inbox/X/Y
+        - http://localhost:5540/api/v1/inbox/X/Y
                     (X is the ID of the receiver, and Y is the message code. To avoid every user to see everybody's messages)
         
     D). With GET Method: Type the following link in the adress      bar to get all messages sent by a given user: 
-        - http://localhost:5000/api/v1/sent/X/Y
+        - http://localhost:5540/api/v1/sent/X/Y
                     (X is the ID of the sender, and Y is is the message code. To avoid every user to see everybody's messages)
         
     E). With GET Method: Type the following link in the adress      bar to get all user's unread message: 
-        - http://localhost:5000/api/v1/inbox/X/unread
+        - http://localhost:5540/api/v1/inbox/X/unread
                     (X is the ID of the message receiver)
         
     F). Now with POST Method: Type the following link in the        adress bar to create a user: 
-        - http://localhost:5000/api/v1/users
+        - http://localhost:5540/api/v1/users
             Here is the format the data you are storing should take (example):
                     {
                      "general": {
@@ -65,7 +67,7 @@ From scratch
             The ID, and the date & time of creation will be automatically added.
 
     G). With POST Method: Type the following link in the        adress bar to send a message to a given user: 
-        - http://localhost:5000/api/v1/sent
+        - http://localhost:5540/api/v1/sent
             Here is the format the data you are storing should take (example):
                     {
                      "subject": "Bootcamp",
@@ -81,7 +83,7 @@ From scratch
             The ID, and the date & time of creation will be automatically added.
 
     H). Now with PUT Method: Type the following link in the        adress bar to update a given user's information: 
-        - http://localhost:5000/api/v1/users/X/Y
+        - http://localhost:5540/api/v1/users/X/Y
                     (X is the ID of the user, and Y is their password. To avoid every user to modify everybody's account information)
             Here is the format the data you are updating should take (example):
                     {
@@ -98,20 +100,29 @@ From scratch
             The date & time of update will be automatically added.
 
     I). With DELETE Method: Type the following link in the          adress bar to delete a given user's account:
-        - http://localhost:5000/api/v1/users/X/Y
+        - http://localhost:5540/api/v1/users/X/Y
                     (X is the ID of the user, and Y is their password. To avoid every user to delete everybody's account)
 
     J). With DELETE Method: Type the following link in the          adress bar to delete a given sent message:
-        - http://localhost:5000/api/v1/sent/X/Y
+        - http://localhost:5540/api/v1/sent/X/Y
                     (X is the ID of the message, and Y is the message's code. To avoid every user to delete everybody's sent message)
 
     K). With DELETE Method: Type the following link in the          adress bar to delete a given received message:
-        - http://localhost:5000/api/v1/inbox/X/Y
+        - http://localhost:5540/api/v1/inbox/X/Y
                     (X is the ID of the message, and Y is the message's code.. To avoid every user to delete everybody's received message)
 
 They are other options which are still in construction.
 
-![Alt text](C:\Users\propser\Desktop\TESTS\4.png?raw=true "Title")
+## Database endpoints 
+### Some of them:
+
+- http://localhost:5540/api/v2/users/signup : to sign in to the database
+- http://localhost:5540/api/v2/users/login : to log in to the database
+- http://localhost:5540/api/v2/users : to see all users after validation
+
+## UML Diagram of the database
+
+![Alt text]( ./4.png?raw=true "Title")
 
 ### Prerequisites
 
@@ -130,7 +141,7 @@ Prosper B. KILOLO  prosperkilolo@gmail.com
 
 ## Versioning
 
-Version: v1
+Version: v2
 
 ## Author
 

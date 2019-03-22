@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({extended : true}))
 app.use(bodyParser.json())
 
 
-// Managing data structure routes
+// Other data structure routes
 app.use(router);
 app.use(router3);
 app.use(router5);
@@ -42,11 +42,13 @@ app.get('/', (req, res) => {
 
 
 //database routes
-app.delete('/api/v2/users/deletegroup/:id', User.deletegroup);
-app.post('/api/v2/users/creategroup', User.creategroup);
 app.post('/api/v2/users/signup', User.signup);
-app.post('/api/v2/users', User.verifyToken ,User.getAll);
 app.post('/api/v2/users/login', User.signin);
+app.post('/api/v2/users', User.verifyToken ,User.getAll);
+app.post('/api/v2/users/creategroup', User.creategroup);
+app.delete('/api/v2/users/deletegroup/:id', User.deletegroup);
+
+
 
 app.listen(process.env.PORT || 5540, () =>{
   createTables();
@@ -61,6 +63,8 @@ const createTables = () => {
     `CREATE TABLE IF NOT EXISTS
       users(
         id SERIAL PRIMARY KEY,
+        firstname VARCHAR (255),
+        lastname  VARCHAR (255),
         email VARCHAR(255) UNIQUE NOT NULL,
         password VARCHAR (255) NOT NULL
       );
