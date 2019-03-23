@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.com/Prosper07/EPICmail.svg?branch=develop)](https://travis-ci.com/Prosper07/EPICmail) [![Maintainability](https://api.codeclimate.com/v1/badges/e7bd73880353f2a47079/maintainability)](https://codeclimate.com/github/Prosper07/EPICmail/maintainability) [![Coverage Status](https://coveralls.io/repos/github/Prosper07/EPICmail/badge.svg?branch=develop)](https://coveralls.io/github/Prosper07/EPICmail?branch=develop)
 
 
-### There are added things in this version, like database and it's UML diagram, and some secured endpoints pointing to the database
+### There are added features in this version, like the database, it's UML diagram below, and some secured endpoints pointing to the database
 
 # Project Title : EPICmail
 
