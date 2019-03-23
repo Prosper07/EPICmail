@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.com/Prosper07/EPICmail.svg?branch=develop)](https://travis-ci.com/Prosper07/EPICmail) [![Maintainability](https://api.codeclimate.com/v1/badges/e7bd73880353f2a47079/maintainability)](https://codeclimate.com/github/Prosper07/EPICmail/maintainability) [![Coverage Status](https://coveralls.io/repos/github/Prosper07/EPICmail/badge.svg?branch=develop)](https://coveralls.io/github/Prosper07/EPICmail?branch=develop)
 
 
+### There are added things in this version, like database and it's UML diagram, and some secured endpoints pointing to the database
+
 # Project Title : EPICmail
 
     A messaging online app where registered users can interact with each othert via messages over a structured system.
@@ -114,7 +116,7 @@ From scratch
 They are other options which are still in construction.
 
 ## Database endpoints 
-### Some of them:
+### Some of secured endpoints (validation and security features are going to be added to endpoints that are not in this list when finishing implementing the security):
 
 - http://localhost:5540/api/v2/users/signup : to sign in to the database
 - http://localhost:5540/api/v2/users/login : to log in to the database
