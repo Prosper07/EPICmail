@@ -121,6 +121,8 @@ They are other options which are still in construction.
 - http://localhost:5540/api/v2/users/signup : to sign in to the database
 - http://localhost:5540/api/v2/users/login : to log in to the database
 - http://localhost:5540/api/v2/users : to see all users after validation
+- http://localhost:5540/api/v2/users/creategroup : to create a group 
+- http://localhost:5540/api/v2/users/deletegroup/:id : to delete a group
 
 ## UML Diagram of the database
 
