@@ -3,8 +3,15 @@ var chaiHttp = require('chai-http');
 var server = require('../server');
 var should = chai.should();
 
+chai.should();
+
 chai.use(chaiHttp);
 
+describe('Results', () => {
+    beforeEach((done) => {
+      chai.request(server);
+    });
+  });
 
 describe('Create user', () => {
     it('should get all the users', function(done){
