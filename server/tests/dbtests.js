@@ -31,7 +31,7 @@ describe('Create user', () => {
             "email": "b@gamail.com"
         })
         .end((err, res) => {
-            res.body.should.have.status(500)
+            res.body.should.have.status(400)
             done()
         })
 })
